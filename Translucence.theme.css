@@ -1,0 +1,328 @@
+/**
+ * @name Translucence
+ * @version 1.0.7
+ * @description A translucent/frosted glass Discord theme (with fixes by Denji and Nuz)
+ * @author NuzFlameV2, ItsDenji777, CapnKitten
+ *
+ * @website http://github.com/CapnKitten
+ * @source https://github.com/CapnKitten/BetterDiscord/blob/master/Themes/Translucence/css/source.css
+ * @donate https://paypal.me/capnkitten
+ * @invite jzJkA6Z
+ */
+
+@import url(https://capnkitten.github.io/BetterDiscord/Themes/Translucence/css/source.css);
+
+
+/* Nuz & Denjis quick fixes for Equicord & Vencord (may work for other mods too) */
+
+
+/* ===== VENCORD STUFF - delete this whole chunk if you're not on Vencord ===== */
+
+/* plugin management card */
+.vc-card-base.vc-card-primary.vc-plugins-info-card {
+	background-color: hsl(0,0%,0%, 0.4) !important;
+	backdrop-filter: blur(var(--popout-blur));
+}
+.vc-card-base.vc-card-primary.vc-card-defaultPadding.vc-plugin-ui-elements-button {
+	background-color: hsl(0,0%,0%, 0.4) !important;
+	backdrop-filter: blur(var(--popout-blur));
+}
+/* new plugins bg transparent */
+.vc-changelog-new-plugins-section {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+/* settings title -> white for contrast */
+.vc-h5.vc-special-title {
+  color: #DBDBDB !important;
+}
+/* same but description text */
+.vc-text-defaultColor.vc-special-text {
+  color: #C9C9C9 !important;
+}
+/* plugin tab transparency */
+.visual-refresh .vc-card-base.vc-card-primary.vc-plugins-info-card:hover {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+.visual-refresh .vc-plugin-stats.vc-stockplugins-stats-card {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  backdrop-filter: blur(var(--popout-blur));
+  border: none !important;
+}
+.vc-card-base.vc-card-primary {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  backdrop-filter: blur(var(--popout-blur));
+  border-radius: var(--card-radius);
+}
+
+/* ===== END VENCORD STUFF ===== */
+
+
+/* containers/embeds/backgrounds - this is the stuff you see constantly */
+.container__60fa3 {
+	background-color: var(--card-color) !important;
+	border-radius: var(--card-radius);
+	border: none;
+	border-inline-start: 4px solid;
+}
+.container__60fa3 {
+	border-inline-start: none !important;
+}
+/* no clue tbh */
+.container_f69538.embed_f69538,
+[style*="background-color: #14295259"],
+[style*="background: #14295259"] {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  backdrop-filter: blur(var(--popout-blur)) !important;
+}
+.visual-refresh .cardPrimary_b5dd01 {
+  background-color: transparent !important;
+  backdrop-filter: blur(var(--popout-blur));
+}
+[style*="background-color: #00000066"],
+[style*="background: #00000066"] {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  backdrop-filter: blur(var(--popout-blur)) !important;
+}
+[style*="background-color: #14295259"],
+[style*="background: #14295259"],
+[style*="background-color: rgb(20, 41, 89)"],
+[style*="background: rgb(20, 41, 89)"] {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  backdrop-filter: blur(var(--popout-blur)) !important;
+}
+/* ???? */
+.bar__7aaec {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  backdrop-filter: blur(var(--popout-blur));
+}
+
+
+/* buttons - used everywhere basically */
+.button_a22cb0.md_a22cb0,
+.button_a22cb0.sm_a22cb0,
+.button_a22cb0.lg_a22cb0 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-inline: 16px !important;
+}
+.hoverButton__06ab4:hover {
+  background: transparent !important;
+}
+.closeButton__23c09 .button_a22cb0 {
+	padding: 10px !important;
+	height: 33px;
+	border-radius: 20px;
+	width: 50px;
+}
+
+
+/* popouts/dropdowns - pretty much every context menu and picker uses these */
+.popout__9047f {
+	background-color: none !important;
+	border-radius: 20px !important;
+}
+.visual-refresh .selectDropdown__0edde {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  backdrop-filter: blur(var(--popout-blur));
+  box-shadow: none !important;
+}
+/* emoji picker was blurring the whole row instead of just its own bg */
+.visual-refresh .layer__59d0d {
+  backdrop-filter: blur(var(--popout-blur));
+}
+.visual-refresh .layer__59d0d {
+	backdrop-filter: none !important;
+}
+
+
+/* pills */
+.greyBackgroundPill__9f7e5 {
+	background-color: #19c581 !important;
+}
+.premiumPillText__9f7e5 {
+	color: black !important;
+	font-weight: 600 !important;
+}
+
+
+/* server invites - only shows up when someone drops an invite link */
+.guildInviteContainer__083ae {
+	background-color: transparent;
+}
+.gradient__083ae {
+	background: linear-gradient(180deg,transparent 0,transparent 100%) !important;
+}
+.footerContent__083ae {
+	background-color: transparent;
+}
+/* blur fade behind the join button on collapsed invites */
+.footerContent__083ae.collapsedFooterContent__083ae {
+	position: relative;
+	border-radius: 0 0 var(--card-radius) var(--card-radius);
+}
+.footerContent__083ae.collapsedFooterContent__083ae::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, transparent 0%, hsl(0,0%,0%, 0.4) 100%);
+	backdrop-filter: blur(24px);
+	-webkit-backdrop-filter: blur(24px);
+	mask-image: linear-gradient(to bottom, transparent 0%, black 45%, black 100%);
+	-webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 45%, black 100%);
+	border-radius: inherit;
+	z-index: 0;
+	pointer-events: none;
+}
+.footerContent__083ae.collapsedFooterContent__083ae > * {
+	position: relative;
+	z-index: 1;
+}
+
+
+/* quests - only matters if you actually do quests */
+.visual-refresh .button__201d5.grow__201d5 {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.visual-refresh .lookFilled__201d5.colorBrand__201d5 {
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.visual-refresh .upsellsContainer__8f3cb {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  backdrop-filter: blur(var(--popout-blur));
+  border-radius: var(--card-radius);
+}
+.visual-refresh [data-testid="quest-bar-container"] [inert] .headerText__1ba69,
+.visual-refresh [data-testid="quest-bar-container"] [inert] .questProgressHint_ae7810,
+.visual-refresh [data-testid="quest-bar-container"] [inert] .outer__146e2,
+.visual-refresh [data-testid="quest-bar-container"] [inert] [class*="divider__"],
+.visual-refresh [data-testid="quest-bar-container"] [inert] .submenuWrapper__1ba69 {
+  visibility: hidden !important;
+}
+.visual-refresh [data-testid="quest-bar-container"] .questProgressCopy_ae7810 > div {
+  opacity: 1 !important;
+}
+.visual-refresh [data-testid="quest-bar-container"] [inert] .headerText__1ba69 {
+  visibility: hidden !important;
+}
+.visual-refresh .postEnrollmentBackground__24e2c {
+  background: transparent !important;
+  background-image: none !important;
+}
+.visual-refresh .content__0d616 {
+	background-color: hsl(0,0%,0%,0.4) !important;
+	backdrop-filter: blur(var(--popout-blur));
+}
+/* keeps quest reward popup button green */
+.button_a22cb0.overlay-secondary_a22cb0 {
+	background-color: #1BD58B !important;
+}
+/* centers the X icon on that same button */
+.button_a22cb0.overlay-secondary_a22cb0 .buttonChildrenWrapper_a22cb0 {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+.button_a22cb0.overlay-secondary_a22cb0 svg.icon_a22cb0 {
+	width: 16px !important;
+	height: 16px !important;
+	flex-shrink: 0 !important;
+}
+
+
+/* misc one-off stuff */
+.cameraWrapper__92346 {
+	background-color: hsl(0,0%,0%,0.4) !important;
+	backdrop-filter: blur(var(--popout-blur));
+}
+.content__5e434 {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+
+/* End of quick fixes */
+:root {
+	/* APP ELEMENTS */
+	--app-bg: url(https://www.image2url.com/r2/default/images/1784074998913-f3e6ca43-b6ca-435a-b384-f94c7d554c92.png);
+	--app-blur: 6px;
+	--app-margin: 24px;
+	--app-radius: 8px;
+
+	/* ACCENT HSL AND TEXT COLOR SETTINGS */
+	--accent-hue: 156;
+	--accent-saturation: 77.5%;
+	--accent-lightness: 47.1%;
+	--accent-opacity: 1;
+	--accent-text-color: hsl(0,0%,0%);
+
+	/* SIDEBARS AND CHAT AREA COLOR SETTINGS */
+	--sidebar-color: hsl(0,0%,0%,0.4);
+	--main-content-color: hsl(0,0%,0%,0.2);
+
+	/* MESSAGE SETTINGS */
+	--message-color: hsl(0,0%,0%,0.4);
+	--message-radius: 8px;
+	--message-padding-top: 8px;
+	--message-padding-side: 8px;
+
+	/* REPLY HSL COLOR SETTINGS */
+	--reply-hue: 226;
+	--reply-saturation: 77.4%;
+	--reply-lightness: 61.8%;
+	--reply-opacity: 1;
+
+	/* TEXTAREA SETTINGS */
+	--textarea-color: 255,255,255;
+	--textarea-alpha: 0.1;
+	--textarea-alpha-focus: 0.15;
+	--textarea-text-color: hsl(0,0%,100%);
+	--textarea-radius: 22px;
+
+	/* CARD SETTINGS */
+	--card-color: hsl(0,0%,0%,0.4);
+	--card-color-hover: hsl(0,0%,0%,0.5);
+	--card-color-select: hsl(0,0%,0%,0.7);
+
+	/* BUTTON SETTINGS */
+	--button-height: 32px;
+	--button-padding: 0 16px;
+	--button-action-color: hsl(0,0%,0%);
+	--button-radius: 16px;
+}
+
+@supports (color:color-mix(in lch,red,blue)) {
+    .visual-refresh .theme-dark,
+    .visual-refresh.theme-dark {
+		/* TEXT COLOR SETTINGS */
+		--text-primary: hsl(0,0%,100%);
+		--text-secondary: hsl(0,0%,77%);
+
+		/* CHANNEL COLOR SETTINGS */
+		--channels-default: hsl(0,0%,62%);
+		--channel-icon: hsl(0,0%,62%);
+
+		/* ICON COLOR SETTINGS */
+		--icon-primary: hsl(0,0%,96%);
+		--icon-secondary: hsl(0,0%,84%);
+		--icon-tertiary: hsl(0,0%,71%);
+		--icon-muted: #ffffff9c !important;
+
+		/* INTERACTIVE COLOR SETTINGS */
+		--interactive-normal: hsl(0,0%,79%);
+		--interactive-hover: hsl(0,0%,91%);
+		--interactive-active: hsl(0,0%,100%);
+		--interactive-muted: hsl(0,0%,43%);
+
+		/* BACKGROUND MODIFIER SETTINGS */
+		--background-modifier-hover: hsl(0,0%,100%,0.075);
+		--background-modifier-selected: hsl(0,0%,100%,0.125);
+    }
+}
