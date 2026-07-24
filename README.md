@@ -1,6 +1,8 @@
-# Translucence Theme - [![Paypal][paypal-logo]][paypal-url] [![GitHub][github-logo]][github-url] [![Discord][discord-logo]][discord-url]
+# Translucence Theme 
 #### A translucent/frosted glass Discord theme
 <hr>
+
+# Tweaks made by ItsDenji777 & NuzFlameV2
 
 Current version: v2.0.0 (07/06/2026)
 
@@ -91,12 +93,4 @@ https://capnkitten.github.io/BetterDiscord/Themes/Translucence/css/source.css
 
 #### Liquid glass elements
  - `--light-angle` - The angle of which the liquid glass effect is applied. Default: `40deg`
- 
-[paypal-logo]: https://img.shields.io/static/v1?label=PayPal&message=Donate&style=flat&logo=paypal&color=blue
-[paypal-url]: https://paypal.me/capnkitten
 
-[github-logo]: https://img.shields.io/static/v1?label=GitHub&message=Sponsor&style=flat&logo=github&color=black
-[github-url]: https://github.com/sponsors/CapnKitten
-
-[discord-logo]: https://img.shields.io/static/v1?label=Discord&message=Server&style=flat&logo=discord&color=blue
-[discord-url]: https://discord.gg/jzJkA6Z
