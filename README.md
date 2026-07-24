@@ -1,5 +1,6 @@
 # Translucence Theme 
 #### A translucent/frosted glass Discord theme
+[Original Repository](https://github.com/CapnKitten/Translucence)
 <hr>
 
 # Tweaks made by ItsDenji777 & NuzFlameV2
