@@ -1,8 +1,8 @@
 /**
  * @name Translucence
  * @version 1.0.7
- * @description A translucent/frosted glass Discord theme (with fixes by Denji and Nuz)
- * @author NuzFlameV2, ItsDenji777, CapnKitten
+ * @description A translucent/frosted glass Discord theme
+ * @author NCapnKitten
  *
  * @website http://github.com/CapnKitten
  * @source https://github.com/CapnKitten/BetterDiscord/blob/master/Themes/Translucence/css/source.css
@@ -12,30 +12,38 @@
 
 @import url(https://capnkitten.github.io/BetterDiscord/Themes/Translucence/css/source.css);
 
+/*
+/* =========================================================
+   VENCORD/EQUICORD FIXES
+   Delete this whole block if you're not on Vencord
+   ========================================================= */
 
-/* Nuz & Denjis quick fixes for Equicord & Vencord (may work for other mods too) */
-
-
-/* ===== VENCORD STUFF - delete this whole chunk if you're not on Vencord ===== */
+/* private profile popout - corners weren't matching the card radius */
+[class*="profilePopout__"] {
+  border-radius: var(--card-radius) !important;
+  overflow: hidden !important;
+}
+/* profile popout loading state */
+.profilePopout__1add6 {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
 
 /* plugin management card */
 .vc-card-base.vc-card-primary.vc-plugins-info-card {
-	background-color: hsl(0,0%,0%, 0.4) !important;
-	backdrop-filter: blur(var(--popout-blur));
+  background-color: hsl(0,0%,0%, 0.4) !important;
 }
 .vc-card-base.vc-card-primary.vc-card-defaultPadding.vc-plugin-ui-elements-button {
-	background-color: hsl(0,0%,0%, 0.4) !important;
-	backdrop-filter: blur(var(--popout-blur));
+  background-color: hsl(0,0%,0%, 0.4) !important;
 }
-/* new plugins bg transparent */
+/* new plugins section background */
 .vc-changelog-new-plugins-section {
   background-color: hsl(0,0%,0%, 0.4) !important;
 }
-/* settings title -> white for contrast */
+/* settings title - white for contrast */
 .vc-h5.vc-special-title {
   color: #DBDBDB !important;
 }
-/* same but description text */
+/* settings description text */
 .vc-text-defaultColor.vc-special-text {
   color: #C9C9C9 !important;
 }
@@ -45,142 +53,262 @@
 }
 .visual-refresh .vc-plugin-stats.vc-stockplugins-stats-card {
   background-color: hsl(0,0%,0%, 0.4) !important;
-  backdrop-filter: blur(var(--popout-blur));
   border: none !important;
 }
 .vc-card-base.vc-card-primary {
   background-color: hsl(0,0%,0%, 0.4) !important;
-  backdrop-filter: blur(var(--popout-blur));
   border-radius: var(--card-radius);
 }
-
-/* ===== END VENCORD STUFF ===== */
-
-
-/* containers/embeds/backgrounds - this is the stuff you see constantly */
-.container__60fa3 {
-	background-color: var(--card-color) !important;
-	border-radius: var(--card-radius);
-	border: none;
-	border-inline-start: 4px solid;
-}
-.container__60fa3 {
-	border-inline-start: none !important;
-}
-/* no clue tbh */
-.container_f69538.embed_f69538,
-[style*="background-color: #14295259"],
-[style*="background: #14295259"] {
+/* "Open Themes Folder / Load missing Themes / Edit QuickCSS" panel -
+   at the correct dark transparency, everything else in this section
+   now matches it (#00000066 = hsl(0,0%,0%,0.4)) */
+.vc-card-base.vc-card-primary.vc-settings-quickActions-card {
   background-color: hsl(0,0%,0%, 0.4) !important;
-  backdrop-filter: blur(var(--popout-blur)) !important;
 }
-.visual-refresh .cardPrimary_b5dd01 {
+/* theme filter/select dropdown on Themes settings page -
+   was fully transparent, now matches the same dark card tone */
+.container_72c38.selectFieldContainer_0edde,
+.wrapper_a16aea.wrapper__72c38 {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+
+/* boost */
+div.tooltipContent_c36707 {
+  background-color: hsl(0,0%,0%, 0.2) !important;
+  backdrop-filter: blur(var(--app-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--app-blur)) !important;
+}
+div.containerCompact__6c253 {
+  background-color: hsl(0,0%,0%, 0.2) !important;
+  backdrop-filter: blur(var(--app-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--app-blur)) !important;
+}
+
+/* emoji react */
+div.categoryItemDefaultCategory_b9ee0c.categoryItem_b9ee0c.categoryItemDefaultCategory_b9ee0c {
   background-color: transparent !important;
-  backdrop-filter: blur(var(--popout-blur));
 }
-[style*="background-color: #00000066"],
-[style*="background: #00000066"] {
-  background-color: hsl(0,0%,0%, 0.4) !important;
-  backdrop-filter: blur(var(--popout-blur)) !important;
+div.label__0d242 {
+  background-color: transparent !important;
 }
-[style*="background-color: #14295259"],
-[style*="background: #14295259"],
-[style*="background-color: rgb(20, 41, 89)"],
-[style*="background: rgb(20, 41, 89)"] {
+/* student hub join card */
+div.container_a76561 {
   background-color: hsl(0,0%,0%, 0.4) !important;
-  backdrop-filter: blur(var(--popout-blur)) !important;
 }
-/* ???? */
-.bar__7aaec {
+/* GIF/sticker search results header */
+div.headerBar__8a7fc.relative__8a7fc {
+  background-color: transparent !important;
+}
+/* keybind rows */
+div.defaultKeybindGroup_f82450 {
   background-color: hsl(0,0%,0%, 0.4) !important;
-  backdrop-filter: blur(var(--popout-blur));
+}
+/* game promo card */
+div.card__84e3e.card_f215b9.clickable__84e3e {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+/* forum post banner - light transparency, round top corners only */
+div.banner__183e8.clickable__183e8 {
+  background-color: hsl(0,0%,0%, 0.05) !important;
+  border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
+}
+/* new topics bar - fix transparency, dark text for contrast on green */
+div.newTopicsBarContainer__0f481 {
+  background-color: #1BD58BCC !important;
+  opacity: 1 !important;
+}
+div.newTopicsBarContainer__0f481 * {
+  color: #000000 !important;
+}
+div.container_e97453 {
+  background-color: hsl(0,0%,0%, 0.2) !important;
+}
+/* accessibility settings chat preview - fully transparent */
+div.preview__6b741 {
+  background-color: hsl(0,0%,0%, 0) !important;
+  backdrop-filter: blur(var(--app-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--app-blur)) !important;
+  border-radius: var(--card-radius) !important;
+}
+/* preview decoration wrapper - fully transparent */
+div.decorationWrapper__6131a.sticky__6131a::before {
+  background-color: transparent !important;
+}
+/* onboarding transparency - not fully done yet */
+div.channelList__75906,
+div.container_e9b3cb {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+
+/* more stuff me just doin not vencord */
+/* voice channel wdiget thingy */
+span.total__260e1 {
+  background-color: hsl(0,0%,0%, 0.2) !important;
+}
+span.users__260e1 {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+div.wrapper__260e1 {
+  background-color: transparent !important;
+}
+
+/* Hover on reactions */
+div.reactionTooltip_bbcccb {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  backdrop-filter: blur(var(--app-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--app-blur)) !important;
+  border-radius: var(--card-radius) !important;
+}
+/* hover on cards in the forum thing */
+div.container_faa96b.mainCard_f369db.isOpen_faa96b {
+  background-color: hsl(0,0%,0%, 0.5) !important;
+  border-radius: var(--popout-radius) !important;
+  border: none !important;
+  box-shadow: var(--popout-shadow-border) !important;
 }
 
 
-/* buttons - used everywhere basically */
-.button_a22cb0.md_a22cb0,
-.button_a22cb0.sm_a22cb0,
-.button_a22cb0.lg_a22cb0 {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding-inline: 16px !important;
+/* server guide */
+div.row_d13feb {
+  background-color: hsl(0,0%,0%, 0.4) !important;
 }
-.hoverButton__06ab4:hover {
+/* invite link next to server guide */
+.guildInviteContainer__083ae,
+div.container_dca174 {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+/* round the server banner */
+div.animatedContainer_f37cb1,
+div.bannerImage_f37cb1 {
+  border-radius: 0 0 var(--card-radius) var(--card-radius) !important;
+}
+/* =========================================================
+   PROFILE / ROLES / SERVER SETTINGS
+   ========================================================= */
+
+/* private profile popout banner - keep square corners here */
+div.banner__68edb {
+  border-radius: 0 !important;
+}
+/* add role popout */
+div.container__50e22 {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  backdrop-filter: blur(var(--app-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--app-blur)) !important;
+  border-radius: var(--card-radius) !important;
+}
+/* edit-role modal header area */
+div.titleContainer_e29cd7.titleElevated_e29cd7,
+div.header_c6bf1b.stickyHeader_c6bf1b {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  border-radius: var(--card-radius) !important;
+}
+div.header_c6bf1b {
+  background-color: hsl(0,0%,100%, 0.00) !important;
+  backdrop-filter: blur(var(--app-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--app-blur)) !important;
+  border-radius: var(--card-radius) !important;
+  width: calc(100% + 12px) !important;
+}
+div.titleContainer__81b3e {
+  background-color: transparent !important;
+  margin-top: 12px !important;
+}
+/* edit-role "this role can be selected by members" notice */
+[class*="notice_"] {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  border-radius: var(--card-radius) !important;
+}
+/* role icon preview container */
+[class*="previewContainer_"] {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+/* server icon/avatar uploader square */
+[class*="imageUploaderInner_"],
+[class*="avatarUploaderInnerSquare_"] {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+/* server tag input in settings */
+[class*="inputWrapper__"],
+[class*="container_b08af5"] {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+/* icon container gradient background */
+.iconContainer__0ecc4 foreignObject {
   background: transparent !important;
 }
-.closeButton__23c09 .button_a22cb0 {
-	padding: 10px !important;
-	height: 33px;
-	border-radius: 20px;
-	width: 50px;
+.boostIcon__652ee {
+  margin-top: -6px;
 }
-
-
-/* popouts/dropdowns - pretty much every context menu and picker uses these */
-.popout__9047f {
-	background-color: none !important;
-	border-radius: 20px !important;
+/* activity settings modal header */
+div.headerContainer__7db08 {
+  background-color: transparent !important;
 }
-.visual-refresh .selectDropdown__0edde {
+/* guild icon */
+img.guildIcon__0fa6d {
+  background-color: transparent !important;
+}
+.panel_b08638 {
+  background: none !important;
+}
+/* =========================================================
+   SOUNDBOARD
+   ========================================================= */
+
+div.picker__09f65 {
   background-color: hsl(0,0%,0%, 0.4) !important;
-  backdrop-filter: blur(var(--popout-blur));
-  box-shadow: none !important;
+  backdrop-filter: blur(var(--app-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--app-blur)) !important;
+  border-radius: var(--card-radius) !important;
 }
-/* emoji picker was blurring the whole row instead of just its own bg */
-.visual-refresh .layer__59d0d {
-  backdrop-filter: blur(var(--popout-blur));
+/* section header */
+div.sectionContainer__61424 {
+  background-color: transparent !important;
 }
-.visual-refresh .layer__59d0d {
-	backdrop-filter: none !important;
-}
-
-
-/* pills */
-.greyBackgroundPill__9f7e5 {
-	background-color: #19c581 !important;
-}
-.premiumPillText__9f7e5 {
-	color: black !important;
-	font-weight: 600 !important;
+/* sound button wrapper */
+li.soundButtonWrapper__9be63 {
+  background-color: transparent !important;
 }
 
 
-/* server invites - only shows up when someone drops an invite link */
-.guildInviteContainer__083ae {
-	background-color: transparent;
+/* =========================================================
+   NITRO / GIFTS / GAMES
+   ========================================================= */
+
+/* nitro credit account card */
+div.detailsBlock_e335a7,
+div.noItemsCard__70151,
+div.accountCredit__70151 {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  border-radius: var(--card-radius) !important;
 }
-.gradient__083ae {
-	background: linear-gradient(180deg,transparent 0,transparent 100%) !important;
+/* credits charging row - fully transparent */
+div.fractionalTimeRemainingRow__94f72 {
+  background-color: transparent !important;
 }
-.footerContent__083ae {
-	background-color: transparent;
+/* nitro gift card */
+div.giftCard_a45ed3 {
+  background-color: hsl(0,0%,0%, 0.4) !important;
 }
-/* blur fade behind the join button on collapsed invites */
-.footerContent__083ae.collapsedFooterContent__083ae {
-	position: relative;
-	border-radius: 0 0 var(--card-radius) var(--card-radius);
+/* nitro settings share progress bar container */
+div.expandedProgressBarContainerSettingsPage__2c345 {
+  background-color: transparent !important;
 }
-.footerContent__083ae.collapsedFooterContent__083ae::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-	background: linear-gradient(180deg, transparent 0%, hsl(0,0%,0%, 0.4) 100%);
-	backdrop-filter: blur(24px);
-	-webkit-backdrop-filter: blur(24px);
-	mask-image: linear-gradient(to bottom, transparent 0%, black 45%, black 100%);
-	-webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 45%, black 100%);
-	border-radius: inherit;
-	z-index: 0;
-	pointer-events: none;
+/* add game popout */
+.selectDropdown__0edde {
+  backdrop-filter: blur(var(--app-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--app-blur)) !important;
 }
-.footerContent__083ae.collapsedFooterContent__083ae > * {
-	position: relative;
-	z-index: 1;
+div.addGamePopout__254c2 {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  border-radius: var(--card-radius) !important;
 }
 
 
-/* quests - only matters if you actually do quests */
+/* =========================================================
+   QUESTS
+   ========================================================= */
+
 .visual-refresh .button__201d5.grow__201d5 {
   padding-left: 8px !important;
   padding-right: 8px !important;
@@ -196,7 +324,6 @@
 }
 .visual-refresh .upsellsContainer__8f3cb {
   background-color: hsl(0,0%,0%, 0.4) !important;
-  backdrop-filter: blur(var(--popout-blur));
   border-radius: var(--card-radius);
 }
 .visual-refresh [data-testid="quest-bar-container"] [inert] .headerText__1ba69,
@@ -217,38 +344,228 @@
   background-image: none !important;
 }
 .visual-refresh .content__0d616 {
-	background-color: hsl(0,0%,0%,0.4) !important;
-	backdrop-filter: blur(var(--popout-blur));
+  background-color: hsl(0,0%,0%,0.4) !important;
 }
 /* keeps quest reward popup button green */
 .button_a22cb0.overlay-secondary_a22cb0 {
-	background-color: #1BD58B !important;
+  background-color: #1BD58B !important;
 }
 /* centers the X icon on that same button */
 .button_a22cb0.overlay-secondary_a22cb0 .buttonChildrenWrapper_a22cb0 {
-	display: flex !important;
-	align-items: center !important;
-	justify-content: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 .button_a22cb0.overlay-secondary_a22cb0 svg.icon_a22cb0 {
-	width: 16px !important;
-	height: 16px !important;
-	flex-shrink: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
 }
 
 
-/* misc one-off stuff */
+/* =========================================================
+   CONTAINERS / EMBEDS / GENERIC BACKGROUNDS
+   ========================================================= */
+
+.container__60fa3 {
+  background-color: var(--card-color) !important;
+  border-radius: var(--card-radius);
+  border: none;
+  border-inline-start: 4px solid;
+}
+.container__60fa3 {
+  border-inline-start: none !important;
+}
+/* no clue, catches leftover blue embeds */
+.container_f69538.embed_f69538,
+[style*="background-color: #14295259"],
+[style*="background: #14295259"] {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+.visual-refresh .cardPrimary_b5dd01 {
+  background-color: transparent !important;
+}
+[style*="background-color: #00000066"],
+[style*="background: #00000066"] {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+[style*="background-color: #14295259"],
+[style*="background: #14295259"],
+[style*="background-color: rgb(20, 41, 89)"],
+[style*="background: rgb(20, 41, 89)"] {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+.bar__7aaec {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+.container_cbd375 {
+  background-color: transparent !important;
+}
+.container__89463 {
+  background-color: transparent !important;
+}
+.contentContainer__89463 {
+  background-color: transparent !important;
+}
+.sidebarContainer__89463 {
+  background-color: hsla(0, 0%, 0%, 0.151) !important;
+}
+.container__5573a {
+  background-color: hsl(0,0%,0%, 0.3) !important;
+}
+.boostContainer__823e1 {
+  background-color: hsl(0,0%,0%, 0.4) !important; 
+}
+
+
+/* =========================================================
+   BUTTONS, POPOUTS, PILLS
+   ========================================================= */
+
+.button_a22cb0.md_a22cb0,
+.button_a22cb0.sm_a22cb0,
+.button_a22cb0.lg_a22cb0 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-inline: 16px !important;
+}
+.hoverButton__06ab4:hover {
+  background: transparent !important;
+}
+.closeButton__23c09 .button_a22cb0 {
+  padding: 10px !important;
+  height: 33px;
+  border-radius: 20px;
+  width: 50px;
+}
+
+/* context menus and pickers */
+.popout__9047f {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  backdrop-filter: blur(var(--app-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--app-blur)) !important;
+  border-radius: var(--card-radius) !important;
+  box-shadow: none !important;
+}
+.visual-refresh .selectDropdown__0edde {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+  backdrop-filter: blur(var(--app-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--app-blur)) !important;
+  border-radius: var(--card-radius) !important;
+  box-shadow: none !important;
+}
+/* emoji picker was blurring the whole row instead of just itself */
+.visual-refresh .layer__59d0d {
+  backdrop-filter: none !important;
+}
+
+.greyBackgroundPill__9f7e5 {
+  background-color: #19c581 !important;
+}
+.premiumPillText__9f7e5 {
+  color: black !important;
+  font-weight: 600 !important;
+}
+
+.hoverButtonGroup__06ab4{
+  background-color: #19c581 !important;
+  border-radius: 18px !important;
+}
+.hoverButton__06ab4 {
+  color: #000000 !important;
+}
+.hoverButton__06ab4:hover {
+  color: #252525 !important;
+}
+.wrapper_f7ecac {
+  background-color: transparent !important;
+  border-radius: 18px;
+}
+
+.button_f7ecac.dangerous_f7ecac {
+  color: red !important;
+}
+.boostProgressBackground__5573a {
+  border-color: #19c581 !important;
+}
+.guildTooltipWrapper_b1f768 {
+  color: #000000 !important;
+}
+.popout_ab4223 {
+  background-color: var(--popout-color);
+  backdrop-filter: blur(var(--popout-blur));
+  border-radius: var(--popout-radius);
+}
+.custom-user-profile-theme.user-profile-popout .inner_c0bea0, .custom-user-profile-theme.user-profile-sidebar.user-profile-sidebar-redesign .inner_c0bea0 {
+  border-radius: 19px !important;
+}
+
+/* =========================================================
+   SERVER INVITES
+   ========================================================= */
+
+.guildInviteContainer__083ae {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+.gradient__083ae {
+  background: linear-gradient(180deg,transparent 0,transparent 100%) !important;
+}
+.footerContent__083ae {
+  background-color: hsl(0,0%,0%, 0.4) !important;
+}
+/* fades from transparent at top down to the glass tone, so there's
+   no hard seam where it meets the banner image above it */
+.footerContent__083ae.collapsedFooterContent__083ae {
+  background: linear-gradient(180deg, transparent 0%, hsl(0,0%,0%, 0.4) 45%, hsl(0,0%,0%, 0.4) 100%) !important;
+  border-radius: 0 0 var(--card-radius) var(--card-radius);
+}
+/* "Go to Server" button was rendering washed-out against the footer
+   overlay at 0.8 alpha - forced fully opaque */
+.footerContent__083ae .button_a22cb0 {
+  background-color: hsl(var(--accent-hsl)) !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   MISC ONE-OFFS
+   ========================================================= */
+
 .cameraWrapper__92346 {
-	background-color: hsl(0,0%,0%,0.4) !important;
-	backdrop-filter: blur(var(--popout-blur));
+  background-color: hsl(0,0%,0%,0.4) !important;
 }
 .content__5e434 {
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 
-/* End of quick fixes */
+/* Nitro home stuff */
+div.container_a62383.purple_a62383.container_e0cd4a.gradientBackground_e0cd4a {
+  background-color: transparent !important;
+}
+div.container_ce5f0d {
+  background-color: transparent !important;
+}
+div.progressContainer_ce5f0d.progressIndicatorSurface_ce5f0d {
+  background-color: transparent !important;
+}
+
+.blurOverlay__5b393 {
+  background: none !important;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+.container__7137c {
+  background-color: hsl(0,0%,0%,0.1);
+}
+
+/* =========================================================
+   LOCAL OVERRIDES ON TOP OF THE PUSHED SOURCE
+   ========================================================= */
+
 :root {
 	/* APP ELEMENTS */
 	--app-bg: url(https://www.image2url.com/r2/default/images/1784074998913-f3e6ca43-b6ca-435a-b384-f94c7d554c92.png);
@@ -256,64 +573,84 @@
 	--app-margin: 24px;
 	--app-radius: 8px;
 
-	/* ACCENT HSL AND TEXT COLOR SETTINGS */
+	/* ACCENT HSL AND TEXT COLOR SETTINGS - was purple, swapped to green */
 	--accent-hue: 156;
 	--accent-saturation: 77.5%;
 	--accent-lightness: 47.1%;
-	--accent-opacity: 1;
+	--accent-opacity: 0.8;
 	--accent-text-color: hsl(0,0%,0%);
 
 	/* SIDEBARS AND CHAT AREA COLOR SETTINGS */
-	--sidebar-color: hsl(0,0%,0%,0.4);
-	--main-content-color: hsl(0,0%,0%,0.2);
+	--sidebar-color: hsl(0,0%,0%,0.34);
+	--main-content-color: hsl(0,0%,0%,0.27);
 
 	/* MESSAGE SETTINGS */
-	--message-color: hsl(0,0%,0%,0.4);
-	--message-radius: 8px;
+	--message-color: hsl(0,0%,0%,0.19);
+	--message-color-hover: hsl(0,0%,0%,0.28);
+	--message-radius: 18px;
 	--message-padding-top: 8px;
 	--message-padding-side: 8px;
 
-	/* REPLY HSL COLOR SETTINGS */
-	--reply-hue: 226;
-	--reply-saturation: 77.4%;
-	--reply-lightness: 61.8%;
+	/* REPLY HSL COLOR SETTINGS - was pink, switched to green accent */
+	--reply-hue: 156;
+	--reply-saturation: 77.5%;
+	--reply-lightness: 47.1%;
 	--reply-opacity: 1;
+}
+
+/* --reply-hue wasn't taking effect on the glow, hard-overriding it directly */
+.wrapper_c19a55.replying__5126c {
+	border-color: hsl(156, 77.5%, 47.1%) !important;
+	box-shadow: 0px 0px 13px 4px hsla(156, 77.5%, 47.1%, 1) !important;
+}
+
+:root {
 
 	/* TEXTAREA SETTINGS */
 	--textarea-color: 255,255,255;
-	--textarea-alpha: 0.1;
-	--textarea-alpha-focus: 0.15;
+	--textarea-alpha: 0.125;
+	--textarea-alpha-focus: 0.165;
 	--textarea-text-color: hsl(0,0%,100%);
-	--textarea-radius: 22px;
+	--textarea-radius: 28px;
 
-	/* CARD SETTINGS */
+	/* CARD SETTINGS - pushed update reset this to white, forced back to black */
 	--card-color: hsl(0,0%,0%,0.4);
 	--card-color-hover: hsl(0,0%,0%,0.5);
 	--card-color-select: hsl(0,0%,0%,0.7);
+	--card-radius: 18px;
 
 	/* BUTTON SETTINGS */
 	--button-height: 32px;
-	--button-padding: 0 16px;
+	--button-padding: 16px;
 	--button-action-color: hsl(0,0%,0%);
 	--button-radius: 16px;
+
+	/* POPOUT SETTINGS */
+	--popout-color: hsl(0,0%,0%,0.46);
+	--popout-blur: 6px;
+	--popout-radius: 18px;
+	--popout-shadow: 0 20px 40px hsl(0,0%,0%,0.44);
+	--popout-shadow-border: inset 0 1px 1px hsl(0,100%,100%,0.35), inset 0 -1px 2px hsl(0,0%,0%,0.25), inset 0 0 0 1px hsl(0,100%,100%,0.04);
+
+	/* LIQUID GLASS SETTINGS */
+	--light-angle: 40deg;
 }
 
-@supports (color:color-mix(in lch,red,blue)) {
-    .visual-refresh .theme-dark,
-    .visual-refresh.theme-dark {
+@supports (color: color-mix(in lch, red, blue)) {
+	.theme-dark {
 		/* TEXT COLOR SETTINGS */
 		--text-primary: hsl(0,0%,100%);
 		--text-secondary: hsl(0,0%,77%);
-
-		/* CHANNEL COLOR SETTINGS */
-		--channels-default: hsl(0,0%,62%);
-		--channel-icon: hsl(0,0%,62%);
+		--text-default: hsl(0,0%,86%);
+		--text-muted: hsl(0,0%,72%);
+		--channels-default: hsl(0,0%,73%);
+		--channel-icon: hsl(0,0%,73%);
+		--text-strong: hsl(0,0%,100%);
 
 		/* ICON COLOR SETTINGS */
 		--icon-primary: hsl(0,0%,96%);
 		--icon-secondary: hsl(0,0%,84%);
 		--icon-tertiary: hsl(0,0%,71%);
-		--icon-muted: #ffffff9c !important;
 
 		/* INTERACTIVE COLOR SETTINGS */
 		--interactive-normal: hsl(0,0%,79%);
@@ -323,6 +660,13 @@
 
 		/* BACKGROUND MODIFIER SETTINGS */
 		--background-modifier-hover: hsl(0,0%,100%,0.075);
+		--background-modifier-active: hsl(0,0%,100%,0.1);
 		--background-modifier-selected: hsl(0,0%,100%,0.125);
-    }
+		--background-modifier-accent: hsl(0,0%,100%,0.175);
+		--background-primary: transparent;
+
+		/* ACCENT COLORED TEXT AND LINK SETTINGS */
+		--text-brand: hsl(var(--accent-hsl));
+		--text-link: hsl(var(--accent-hsl));
+	}
 }
